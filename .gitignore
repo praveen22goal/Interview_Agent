@@ -1,0 +1,25 @@
+# Node / Next.js
+node_modules/
+frontend/.next/
+frontend/out/
+*.tsbuildinfo
+frontend/.env.local
+frontend/.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+backend/.venv/
+backend/venv/
+
+# Secrets and local environment
+.env
+frontend/.env.local
+frontend/.env.*.local
+backend/.env
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+Instruction/
