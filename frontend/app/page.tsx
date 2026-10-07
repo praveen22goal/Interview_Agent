@@ -36,7 +36,6 @@ type InterviewReport = {
   verdict: string;
 };
 
-const API_BASE = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/$/, "");
 const difficulties: { name: Difficulty; note: string }[] = [
   { name: "Easy", note: "Foundations" },
   { name: "Medium", note: "Applied reasoning" },
@@ -46,7 +45,7 @@ const difficulties: { name: Difficulty; note: string }[] = [
 async function apiRequest<T>(path: string, body?: unknown): Promise<T> {
   let response: Response;
   try {
-    response = await fetch(`${API_BASE}${path}`, {
+    response = await fetch(path, {
       method: body ? "POST" : "GET",
       headers: body ? { "Content-Type": "application/json" } : undefined,
       body: body ? JSON.stringify(body) : undefined,
